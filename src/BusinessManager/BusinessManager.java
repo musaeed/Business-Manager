@@ -1,8 +1,13 @@
 package BusinessManager;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 
 import Component_listeners.frameListener;
+import GUI.BottomMenu;
+import GUI.MainPanel;
+import GUI.RibbonMenu;
 import MainMenu.frameMenu;
 import Utilities.Themes;
 
@@ -36,7 +41,12 @@ public class BusinessManager {
 	}
 	
 	public void addComponents(){
+		
 		frame.setJMenuBar(new frameMenu());
+		frame.setLayout(new BorderLayout());
+		frame.add(new RibbonMenu(), BorderLayout.WEST);
+		frame.add(new MainPanel());
+		frame.add(new BottomMenu(), BorderLayout.SOUTH);
 	}
 
 }

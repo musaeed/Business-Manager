@@ -15,6 +15,9 @@ public class frameMenu extends JMenuBar{
 	public void init(){
 		
 		add(new Actions("Actions",'A'));
+		add(new Tools("Tools", 'T'));
+		add(new BackUpMenu("Backup", 'B'));
+		add(new Help("Help",'H'));
 	}
 
 }
