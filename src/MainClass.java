@@ -1,7 +1,7 @@
 import java.awt.EventQueue;
 
-import Utilities.StartService;
 import BusinessManager.BusinessManager;
+import Utilities.StartService;
 
 
 public class MainClass {

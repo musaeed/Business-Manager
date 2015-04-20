@@ -47,6 +47,10 @@ public class MainPanel extends JPanel{
 		down = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, southWest, southEast);
 		main = new JSplitPane(JSplitPane.VERTICAL_SPLIT, up, down);
 		
+		up.setResizeWeight(0.5);
+		down.setResizeWeight(0.5);
+		main.setResizeWeight(0.5);
+		
 		add(main, BorderLayout.CENTER);
 		
 		setNorthWestPanel();

@@ -21,6 +21,7 @@ public class BusinessManager {
 	
 	public void init(){
 		Themes.setTheme();
+		//new Authentication().authenticate();
 		initMainFrame();
 		addListeners();
 		addComponents();
