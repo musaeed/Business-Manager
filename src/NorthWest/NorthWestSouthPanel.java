@@ -13,6 +13,8 @@ public class NorthWestSouthPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	private ClickableLabel viewTable;
+	private ClickableLabel createBill;
+	private ClickableLabel searchTable;
 	
 	public NorthWestSouthPanel(){
 		
@@ -25,11 +27,15 @@ public class NorthWestSouthPanel extends JPanel{
 		
 		setLayout(new FlowCustomLayout(FlowLayout.LEFT));
 		viewTable = new ClickableLabel("View table", "view the complete recent bills table");
+		createBill = new ClickableLabel("Create bill", "create a new bill");
+		searchTable = new ClickableLabel("Search table", "search for entries in the bill table");
 	}
 	
 	public void addToPanel(){
 		
 		add(viewTable);
+		add(searchTable);
+		add(createBill);
 	}
 	
 	public void addActions(){
@@ -42,6 +48,29 @@ public class NorthWestSouthPanel extends JPanel{
 				}
 			}
 			
+		});
+		
+		createBill.addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				if(e.getButton() == MouseEvent.BUTTON1){
+					//TODO
+				}
+			}
+			
+		});
+		
+		searchTable.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				if(e.getButton() == MouseEvent.BUTTON1){
+					//TODO
+				}
+			}
 		});
 	}
 

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
+import GUI.BottomMenu;
+
 public class RibbonButton extends JButton{
 
 	private static final long serialVersionUID = 1L;
@@ -28,6 +30,7 @@ public class RibbonButton extends JButton{
 						setContentAreaFilled(true);
 						setOpaque(true);
 						setForeground(new Color(215, 72, 20));
+						BottomMenu.bottomLabel.setText(t);
 					}
 
 					@Override
@@ -35,6 +38,7 @@ public class RibbonButton extends JButton{
 						setContentAreaFilled(false);
 						setOpaque(false);
 						setForeground(Color.BLACK);
+						BottomMenu.bottomLabel.setText("Ready");
 					}
 
 

@@ -13,6 +13,8 @@ public class NorthEastSouthPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	private JLabel viewTable;
+	private JLabel searchTable;
+	private JLabel addCustomer;
 	
 	public NorthEastSouthPanel(){
 		
@@ -25,11 +27,14 @@ public class NorthEastSouthPanel extends JPanel{
 		
 		setLayout(new FlowCustomLayout(FlowCustomLayout.LEFT));
 		viewTable = new ClickableLabel("View table", "view the complete customers table");
-		
+		searchTable = new ClickableLabel("Search table", "search the entries of the customer table");
+		addCustomer = new ClickableLabel("Add Customer", "add a new customer to the table");
 	}
 	
 	public void addToPanel(){
 		add(viewTable);
+		add(searchTable);
+		add(addCustomer);
 	}
 	
 	public void addActions(){
