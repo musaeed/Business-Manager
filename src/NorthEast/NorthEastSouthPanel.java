@@ -43,7 +43,20 @@ public class NorthEastSouthPanel extends JPanel{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(e.getButton() == MouseEvent.BUTTON1){
-					//TODO open table here
+					
+					new ViewTableDialog().show();
+				}
+			}
+			
+		});
+		
+		addCustomer.addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(e.getButton() == MouseEvent.BUTTON1){
+					
+					new AddCustomerDialog().show();
 				}
 			}
 			

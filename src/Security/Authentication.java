@@ -1,4 +1,5 @@
-package Utilities;
+package Security;
+
 
 import javax.swing.JOptionPane;
 
@@ -15,3 +16,4 @@ public class Authentication {
 	}
 
 }
+
