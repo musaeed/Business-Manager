@@ -2,11 +2,15 @@ package NorthEast;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Utilities.Icons;
+import BusinessManager.BusinessManager;
 import Components.CLabel;
 import Components.FlowCustomLayout;
 import Components.RibbonButton;
@@ -18,11 +22,13 @@ public class NorthEastNorthPanel extends JPanel{
 	private RibbonButton exportAsExcel;
 	private RibbonButton exportAsPdf;
 	private RibbonButton exportAsText;
+	private RibbonButton refresh;
 	
 	public NorthEastNorthPanel(){
 		
 		init();
 		addToPanel();
+		addActions();
 	}
 	
 	public void init(){
@@ -40,6 +46,10 @@ public class NorthEastNorthPanel extends JPanel{
 		exportAsText = new RibbonButton("", "export the table as simple text file");
 		exportAsText.setIcon(Icons.getIcon("small/text-icon.png"));
 		exportAsText.setPreferredSize(new Dimension(17,17));
+		
+		refresh = new RibbonButton("", "refresh the table");
+		refresh.setIcon(Icons.getIcon("small/refresh.png"));
+		refresh.setPreferredSize(new Dimension(17,17));
 	}
 	
 	public void addToPanel(){
@@ -47,6 +57,8 @@ public class NorthEastNorthPanel extends JPanel{
 		JPanel right = new JPanel(new FlowCustomLayout(FlowCustomLayout.RIGHT));
 		
 		left.add(tableName);
+		left.add(refresh);
+		
 		right.add(exportAsExcel);
 		right.add(exportAsPdf);
 		right.add(exportAsText);
@@ -54,6 +66,62 @@ public class NorthEastNorthPanel extends JPanel{
 		
 		add(left, BorderLayout.WEST);
 		add(right, BorderLayout.EAST);
+	}
+	
+	public void addActions(){
+		
+		exportAsExcel.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				JFileChooser fc = new JFileChooser();
+				fc.setDialogTitle("Export table as an excel file");
+				fc.showSaveDialog(BusinessManager.frame);
+			}
+		});
+		
+		exportAsPdf.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				JFileChooser fc = new JFileChooser();
+				fc.setDialogTitle("Export table as a pdf file");
+				fc.showSaveDialog(BusinessManager.frame);
+				
+			}
+		});
+		
+		exportAsText.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				JFileChooser fc = new JFileChooser();
+				fc.setDialogTitle("Export table as a text file");
+				fc.showSaveDialog(BusinessManager.frame);
+				
+			}
+		});
+		
+		refresh.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				CustomerTableModel dm = CustomerTableModel.getInstance();
+				
+				int rowCount = dm.getRowCount();
+				//Remove rows one by one from the end of the table
+				for (int i = rowCount - 1; i >= 0; i--) {
+				    dm.removeRow(i);
+				}
+				
+				new CustomerTableLoader();
+				
+			}
+		});
 	}
 	
 }

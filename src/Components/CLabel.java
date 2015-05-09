@@ -11,6 +11,8 @@ import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import javax.swing.JPopupMenu;
 
+import Utilities.Icons;
+
 public class CLabel extends JLabel{
 
 
@@ -51,6 +53,9 @@ public class CLabel extends JLabel{
 		final CMenuItem cut = new CMenuItem("Cut text", "cut the text to the clipboard", 'C', null);
 		final CMenuItem copy = new CMenuItem("Copy text", "copy the text to clipboard", 'o', null);
 		
+		cut.setIcon(Icons.getIcon("small/cut.png"));
+		copy.setIcon(Icons.getIcon("small/copy.png"));
+		
 		cut.addActionListener(new ActionListener() {
 			
 			@Override
@@ -68,6 +73,7 @@ public class CLabel extends JLabel{
 		});
 		
 		menu.add(cut);
+		menu.addSeparator();
 		menu.add(copy);
 		
 		setComponentPopupMenu(menu);

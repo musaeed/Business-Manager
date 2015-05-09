@@ -45,11 +45,12 @@ public class CustomerTableLoader {
 				
 				String firstName = rs.getString("FirstName");
 				String LastName = rs.getString("LastName");
-				String Location = rs.getString("Location");
+				String Location = rs.getString("Address");
 				String email = rs.getString("email");
 				String pNumber = rs.getString("phoneNumber");
+				String photoPath = rs.getString("photoLocation");
 				
-				CustomerTableModel.getInstance().addToTable(new Customer(firstName, LastName, Location, pNumber, email));
+				CustomerTableModel.getInstance().addToTable(new Customer(firstName, LastName, Location, pNumber, email, photoPath));
 			}
 
 			rs.close();
@@ -57,7 +58,7 @@ public class CustomerTableLoader {
 			connection.close();
 			
 		} catch(Exception e){
-			
+			System.out.println(e.getMessage());
 			JOptionPane.showMessageDialog(BusinessManager.frame, "Unable to read the database!", "Error", JOptionPane.ERROR_MESSAGE);
 			return;
 		}

@@ -5,5 +5,6 @@ CREATE TABLE Customers(
 	LastName varchar(255),
 	Address varchar(255),
 	phoneNumber varchar(255),
-	email varchar(255)
+	email varchar(255),
+	photoLocation varchar(255)
 );

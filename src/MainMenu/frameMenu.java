@@ -1,8 +1,10 @@
 package MainMenu;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.Box;
+import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 
 import Components.RibbonButton;
@@ -30,6 +32,9 @@ public class frameMenu extends JMenuBar{
 		user = new RibbonButton("", "Click to see details about current user");
 		user.setIcon(Icons.getIcon("small/user.png"));
 		user.setPreferredSize(new Dimension(17,17));
+		JLabel name = new JLabel("Welcome, Muhammad Omer ");
+		name.setForeground(Color.RED);
+		add(name);
 		add(user);
 	}
 

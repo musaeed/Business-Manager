@@ -39,7 +39,7 @@ public class CustomerTableModel extends DefaultTableModel{
 	
 	public void addToTable(Customer customer){
 		
-		Object data [] = {customer.getFirstName(), customer.getLastName(), customer.getEmailAddress(), customer.getPhoneNumber(),customer.getLocation()};
+		Object data [] = {customer.getFirstName(), customer.getLastName(), customer.getEmailAddress(), customer.getPhoneNumber(),customer.getAddress()};
 		addRow(data);
 	}
 
