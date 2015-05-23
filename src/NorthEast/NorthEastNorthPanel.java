@@ -9,11 +9,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Utilities.Icons;
-import BusinessManager.BusinessManager;
 import Components.CLabel;
 import Components.FlowCustomLayout;
 import Components.RibbonButton;
+import Utilities.Icons;
 
 public class NorthEastNorthPanel extends JPanel{
 
@@ -77,7 +76,7 @@ public class NorthEastNorthPanel extends JPanel{
 				
 				JFileChooser fc = new JFileChooser();
 				fc.setDialogTitle("Export table as an excel file");
-				fc.showSaveDialog(BusinessManager.frame);
+				fc.showSaveDialog(null);
 			}
 		});
 		
@@ -88,7 +87,7 @@ public class NorthEastNorthPanel extends JPanel{
 
 				JFileChooser fc = new JFileChooser();
 				fc.setDialogTitle("Export table as a pdf file");
-				fc.showSaveDialog(BusinessManager.frame);
+				fc.showSaveDialog(null);
 				
 			}
 		});
@@ -100,7 +99,7 @@ public class NorthEastNorthPanel extends JPanel{
 				
 				JFileChooser fc = new JFileChooser();
 				fc.setDialogTitle("Export table as a text file");
-				fc.showSaveDialog(BusinessManager.frame);
+				fc.showSaveDialog(null);
 				
 			}
 		});

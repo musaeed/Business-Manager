@@ -1,9 +1,13 @@
 package Component_listeners;
 
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class frameListener implements WindowListener{
+import GUI.MainPanel;
+
+public class frameListener implements WindowListener, ComponentListener{
 
 	@Override
 	public void windowActivated(WindowEvent e) {}
@@ -30,5 +34,23 @@ public class frameListener implements WindowListener{
 
 	@Override
 	public void windowOpened(WindowEvent e) {}
+
+	@Override
+	public void componentHidden(ComponentEvent e) {}
+
+	@Override
+	public void componentMoved(ComponentEvent e) {}
+
+	@Override
+	public void componentResized(ComponentEvent e) {
+		
+		MainPanel.down.setDividerLocation(0.5);
+		MainPanel.main.setDividerLocation(0.5);
+		MainPanel.up.setDividerLocation(0.5);
+		
+	}
+
+	@Override
+	public void componentShown(ComponentEvent e) {}
 
 }

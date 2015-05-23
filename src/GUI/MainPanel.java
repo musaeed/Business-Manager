@@ -26,9 +26,9 @@ public class MainPanel extends JPanel{
 	private JPanel northEast;
 	private JPanel southWest;
 	private JPanel southEast;
-	private JSplitPane main;
-	private JSplitPane up;
-	private JSplitPane down;
+	public static JSplitPane main;
+	public static JSplitPane up;
+	public static JSplitPane down;
 	
 	public MainPanel(){
 		init();

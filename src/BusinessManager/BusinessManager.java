@@ -1,6 +1,7 @@
 package BusinessManager;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
@@ -34,11 +35,13 @@ public class BusinessManager {
 		frame.setVisible(true);
 		frame.setSize(1024, 780);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setMinimumSize(new Dimension(500,450));
 	}
 	
 	public void addListeners(){
 		
 		frame.addWindowListener(new frameListener());
+		frame.addComponentListener(new frameListener());
 	}
 	
 	public void addComponents(){
